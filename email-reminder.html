@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Email Reminder Center Access</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(145deg,#12303a,#0f6b78);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#163039}.panel{width:min(100%,430px);background:#fff;border-radius:24px;padding:34px;box-shadow:0 24px 65px rgba(0,0,0,.25)}.lock{width:56px;height:56px;border-radius:17px;display:grid;place-items:center;background:#f6edfb;color:#9b5fbd;font-size:1.6rem;font-weight:900}h1{margin:22px 0 8px;font-size:1.75rem;letter-spacing:-.035em;color:#12303a}p{margin:0 0 24px;color:#60767c;line-height:1.5}label{display:block;margin-bottom:8px;font-weight:750}input{width:100%;padding:14px 15px;border:1px solid #cddfe2;border-radius:12px;font:inherit;font-size:1rem}input:focus{outline:3px solid rgba(38,166,181,.25);border-color:#26a6b5}button{width:100%;margin-top:14px;padding:14px;border:0;border-radius:12px;background:#0f6b78;color:#fff;font:inherit;font-weight:800;cursor:pointer}button:hover{background:#0b5964}.back{display:block;margin-top:18px;text-align:center;color:#0f6b78;text-decoration:none;font-weight:700}.error{display:none;margin:0 0 16px;padding:11px 13px;border-radius:10px;background:#fff0f0;color:#a32929;font-weight:650}body.show-error .error{display:block}
+  </style>
+</head>
+<body>
+  <main class="panel">
+    <div class="lock" aria-hidden="true">🔒</div>
+    <h1>Admin access required</h1>
+    <p>Enter the Email Reminder Center password to continue.</p>
+    <div class="error" role="alert">Incorrect password. Please try again.</div>
+    <form action="/api/email-auth" method="post">
+      <label for="password">Admin password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required autofocus>
+      <button type="submit">Continue</button>
+    </form>
+    <a class="back" href="/">Back to dashboard</a>
+  </main>
+  <script>if(new URLSearchParams(location.search).get('error')==='1')document.body.classList.add('show-error');</script>
+</body>
+</html>
