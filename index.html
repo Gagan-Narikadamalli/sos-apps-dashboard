@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Success On The Spectrum project dashboard">
+  <title>SOS Apps Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f6b78'/%3E%3Cpath d='M17 21h30v22H17z' fill='none' stroke='white' stroke-width='4'/%3E%3Cpath d='M23 28h8v8h-8zm14 0h4v4h-4z' fill='white'/%3E%3C/svg%3E">
+  <style>
+    :root{--navy:#12303a;--teal:#0f6b78;--aqua:#26a6b5;--ice:#edf7f8;--white:#fff;--ink:#163039;--muted:#60767c;--line:#d8e7e9;--shadow:0 14px 35px rgba(17,55,64,.10)}
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#f5fbfc 0,#fff 42%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+    .topbar{background:var(--navy);color:#fff;border-bottom:4px solid var(--aqua)}
+    .topbar-inner{max-width:1120px;margin:auto;padding:20px 24px;display:flex;align-items:center;gap:14px}
+    .brand{width:46px;height:46px;border-radius:13px;background:var(--aqua);display:grid;place-items:center;font-weight:850;letter-spacing:-1px}
+    .brand-copy strong{display:block;font-size:1.05rem}.brand-copy span{color:#b9dbe0;font-size:.9rem}
+    main{max-width:1120px;margin:auto;padding:52px 24px 64px}
+    .intro{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}
+    h1{font-size:clamp(2rem,4vw,3.25rem);line-height:1.02;letter-spacing:-.045em;margin:0 0 10px;color:var(--navy)}
+    .intro p{margin:0;color:var(--muted);font-size:1rem}.count{flex:0 0 auto;background:var(--ice);color:var(--teal);border:1px solid var(--line);padding:10px 14px;border-radius:999px;font-weight:750}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .card{position:relative;display:flex;min-height:230px;flex-direction:column;text-decoration:none;color:inherit;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:var(--shadow);overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+    .card:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:var(--accent)}
+    .card:hover,.card:focus-visible{transform:translateY(-4px);box-shadow:0 20px 48px rgba(17,55,64,.16);border-color:#aad7dc;outline:none}
+    .card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px}.icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--soft);color:var(--accent);font-size:1.55rem;font-weight:900}.arrow{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#f1f7f8;color:var(--teal);font-size:1.25rem;transition:transform .2s}.card:hover .arrow{transform:translate(3px,-3px)}
+    h2{margin:24px 0 8px;color:var(--navy);font-size:1.35rem;letter-spacing:-.02em}.card p{margin:0;color:var(--muted);line-height:1.55}.meta{margin-top:auto;padding-top:20px;color:var(--accent);font-size:.86rem;font-weight:780;text-transform:uppercase;letter-spacing:.06em}
+    .calendar{--accent:#d97529;--soft:#fff1e7}.email{--accent:#9b5fbd;--soft:#f6edfb}.livingston{--accent:#258a6d;--soft:#e7f6f1}.parsippany{--accent:#1675a7;--soft:#e8f4fb}
+    footer{max-width:1120px;margin:auto;padding:0 24px 30px;color:#778b90;font-size:.85rem}
+    @media(max-width:720px){main{padding-top:36px}.intro{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.card{min-height:210px}.topbar-inner{padding:16px 20px}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><div class="brand" aria-hidden="true">SOS</div><div class="brand-copy"><strong>Success On The Spectrum</strong><span>Apps Dashboard</span></div></div></header>
+  <main>
+    <section class="intro"><div><h1>Project dashboard</h1><p>Open the forms, calendar, and staff tools from one place.</p></div><div class="count">4 current projects</div></section>
+    <section class="grid" aria-label="SOS project links">
+      <a class="card calendar" href="https://sos-call-out-calendar.vercel.app" target="_blank" rel="noopener noreferrer"><div class="card-head"><div class="icon" aria-hidden="true">31</div><div class="arrow" aria-hidden="true">↗</div></div><h2>Employee Call-Out Calendar</h2><p>Submit and review employee call-outs, PTO, sick leave, and calendar notes.</p><div class="meta">Open calendar</div></a>
+      <a class="card email" href="/email-reminder.html"><div class="card-head"><div class="icon" aria-hidden="true">@</div><div class="arrow" aria-hidden="true">↗</div></div><h2>Employee Email Reminder Center</h2><p>Manage employee email reminders and follow-up messages.</p><div class="meta">Open protected reminder center</div></a>
+      <a class="card livingston" href="https://sos-livingston-arrival-form.vercel.app" target="_blank" rel="noopener noreferrer"><div class="card-head"><div class="icon" aria-hidden="true">L</div><div class="arrow" aria-hidden="true">↗</div></div><h2>Livingston Pickup &amp; Drop-Off</h2><p>Record client pickup and drop-off activity for the Livingston location.</p><div class="meta">Open Livingston form</div></a>
+      <a class="card parsippany" href="https://sos-parsippany-arrival-form.vercel.app" target="_blank" rel="noopener noreferrer"><div class="card-head"><div class="icon" aria-hidden="true">P</div><div class="arrow" aria-hidden="true">↗</div></div><h2>Parsippany Pickup &amp; Drop-Off</h2><p>Record client pickup and drop-off activity for the Parsippany location.</p><div class="meta">Open Parsippany form</div></a>
+    </section>
+  </main>
+  <footer>Success On The Spectrum · Internal project access</footer>
+</body>
+</html>
