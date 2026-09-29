@@ -1,6 +1,6 @@
 import { createHash, timingSafeEqual } from "node:crypto";
 
-const EMAIL_ADMIN_PASSWORD_HASH = "17bd4b37413a0867e5d165476be2edd0e94b61b5eafb9217057e01a04a9a0f51";
+const EMAIL_ADMIN_PASSWORD_HASH = "389759402a476c2c751911a1ab22192a6918df850b2e235b209c6809fc98219e";
 const EMAIL_REMINDER_URL = "https://employee-email-reminder-center.vercel.app";
 
 export default function handler(request, response) {

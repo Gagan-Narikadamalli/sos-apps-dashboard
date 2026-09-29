@@ -1,4 +1,4 @@
-const DASHBOARD_PASSWORD_HASH = "cb5f7ff127dc97931a31d99a4524df1ae6b1496d02029fdb9eb74c0af75edfdb";
+const DASHBOARD_PASSWORD_HASH = "1d1abc7225d378e7ebaa03792c3a3e4cd7cf479857ed225f049f3863f909f1c1";
 
 async function sha256(value) {
   const data = new TextEncoder().encode(value);
