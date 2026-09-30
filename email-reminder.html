@@ -127,9 +127,10 @@
 
     main {
       min-height:calc(100vh - 182px);
-      padding:46px 0 58px;
-      display:grid;
-      place-items:center;
+      padding:46px 20px 58px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       position:relative;
     }
 
@@ -144,8 +145,15 @@
       z-index:-1;
     }
 
+    main > .shell {
+      width:100%;
+      max-width:520px;
+      margin:0 auto;
+    }
+
     .access-card {
-      width:min(100%,520px);
+      width:100%;
+      margin:0 auto;
       background:var(--white);
       border:1px solid var(--line);
       border-radius:25px;
@@ -340,8 +348,12 @@
       }
 
       main {
-        min-height:calc(100vh - 166px);
-        padding:28px 0 36px;
+        min-height:calc(100dvh - 166px);
+        padding:28px 12px 36px;
+      }
+
+      main > .shell {
+        width:100%;
       }
 
       .access-card {
