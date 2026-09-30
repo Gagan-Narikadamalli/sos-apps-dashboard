@@ -1,3 +1,4 @@
+const DASHBOARD_USERNAME = "manager";
 const DASHBOARD_PASSWORD_HASH = "1d1abc7225d378e7ebaa03792c3a3e4cd7cf479857ed225f049f3863f909f1c1";
 
 async function sha256(value) {
@@ -15,9 +16,10 @@ export default async function middleware(request) {
     try {
       const decoded = atob(authorization.slice(6));
       const separator = decoded.indexOf(":");
+      const username = separator >= 0 ? decoded.slice(0, separator) : "";
       const password = separator >= 0 ? decoded.slice(separator + 1) : "";
 
-      if ((await sha256(password)) === DASHBOARD_PASSWORD_HASH) {
+      if (username === DASHBOARD_USERNAME && (await sha256(password)) === DASHBOARD_PASSWORD_HASH) {
         return;
       }
     } catch {
@@ -25,7 +27,7 @@ export default async function middleware(request) {
     }
   }
 
-  return new Response("Password required to access the SOS Apps Dashboard.", {
+  return new Response("Valid username and password are required to access the SOS Apps Dashboard.", {
     status: 401,
     headers: {
       "WWW-Authenticate": 'Basic realm="SOS Manager Dashboard", charset="UTF-8"',
