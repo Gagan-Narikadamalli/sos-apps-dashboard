@@ -13,10 +13,12 @@
   <main class="panel">
     <div class="lock" aria-hidden="true">🔒</div>
     <h1>Admin access required</h1>
-    <p>Enter the Email Reminder Center password to continue.</p>
-    <div class="error" role="alert">Incorrect password. Please try again.</div>
+    <p>Enter the Email Reminder Center username and password to continue.</p>
+    <div class="error" role="alert">Incorrect username or password. Please try again.</div>
     <form action="/api/email-auth" method="post">
-      <label for="password">Admin password</label>
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" autocomplete="username" required autofocus>
+      <label for="password" style="margin-top:14px">Admin password</label>
       <input id="password" name="password" type="password" autocomplete="current-password" required autofocus>
       <button type="submit">Continue</button>
     </form>
